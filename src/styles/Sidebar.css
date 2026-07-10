@@ -1,0 +1,105 @@
+.sidebar {
+  padding: 20px 0;
+}
+
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 10px;
+}
+
+.sidebar-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.menu-item {
+  margin: 0;
+}
+
+.menu-item > a {
+  display: block;
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.menu-item > a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left-color: white;
+  color: white;
+}
+
+.menu-item.active > a {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-left-color: white;
+  color: white;
+  font-weight: 600;
+}
+
+.submenu {
+  list-style: none;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-item.active .submenu {
+  display: block;
+}
+
+.submenu-item > a {
+  display: block;
+  padding: 10px 20px 10px 40px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.submenu-item > a:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.submenu-item.active > a {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Toggle button for mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 250px;
+    max-height: calc(100vh - 60px);
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+}
